@@ -1,0 +1,6 @@
+__pycache__/
+*.pkl
+*.pyc
+flask_env/
+venv/
+.DS_Store
