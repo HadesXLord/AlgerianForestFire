@@ -2,12 +2,13 @@ from flask import Flask,jsonify,request,render_template
 import joblib
 import numpy as np
 import pandas as pd
+import os
 
 
 #load the model
 
-linear_model=joblib.load('Algerian_forest_fire_project/models/linear_model.pkl')
-logistic_model=joblib.load('Algerian_forest_fire_project/models/logistic_model.pkl')
+linear_model=joblib.load('models/linear_model.pkl')
+logistic_model=joblib.load('models/logistic_model.pkl')
 
 
 application=Flask(__name__)
@@ -62,8 +63,11 @@ def predict_logistic():
     else:
         return render_template("predict_logistic_home.html")
 
+# if __name__=="__main__":
+#     app.run(host="0.0.0.0",port=5050,debug=True)
 if __name__=="__main__":
-    app.run(host="0.0.0.0",port=5050,debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 
 
