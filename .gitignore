@@ -1,6 +1,5 @@
 __pycache__/
-*.pkl
 *.pyc
-flask_env/
+flask_project/
 venv/
 .DS_Store
